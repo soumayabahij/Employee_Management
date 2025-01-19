@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "ffa94198-dff8-4c28-9b3e-9408c8cf2a9c",
+		"name": "Employee_API_Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20696938"
+	},
+	"item": [
+		{
+			"name": "Get All Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees/report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"report"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Employees by name, ID, department, or job title",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees/search?query={{query}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "{{query}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Employees by employment status, department, and hire date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees/filter?employmentStatus={{employmentStatus=}}&department={{department}}&hireDate={{hireDate}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "employmentStatus",
+							"value": "{{employmentStatus=}}"
+						},
+						{
+							"key": "department",
+							"value": "{{department}}"
+						},
+						{
+							"key": "hireDate",
+							"value": "{{hireDate}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"employee_id\": \"CZ001\",\n    \"full_name\": \"Soumaya Bahij\",\n    \"job_title\": \"Software Engineer\",\n    \"department\": \"IT\",\n    \"hire_date\": \"2023-01-01\",\n    \"employment_status\": \"Active\",\n    \"contact_info\": \"soumia@yopmail.com\",\n    \"address\": \"123 Main St, Anytown, USA\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employees/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees/login?fullName={{fullname}}&employeeId={{employee_id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"login"
+					],
+					"query": [
+						{
+							"key": "fullName",
+							"value": "{{fullname}}"
+						},
+						{
+							"key": "employeeId",
+							"value": "{{employee_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"employee_id\": \"CZ001\",\n    \"full_name\": \"Soumaya Bahij\",\n    \"job_title\": \"Software Engineer\",\n    \"department\": \"IT\",\n    \"hire_date\": \"2023-01-01\",\n    \"employment_status\": \"Active\",\n    \"contact_info\": \"soumia@yopmail.com\",\n    \"address\": \"123 Main St, Anytown, USA\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employees/{{employee_id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"{{employee_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees/{{employee_id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"{{employee_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
